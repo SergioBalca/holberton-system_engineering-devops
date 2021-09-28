@@ -1,2 +1,2 @@
 #!/bin/bash
-sort -u < words < echo -e "C#\nC\nJavascript\nPerl\nPHP\nPHP\nASP\nR\nC#\nC++\nR\n"	 
+sort -u < words	 
