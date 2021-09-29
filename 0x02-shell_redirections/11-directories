@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -printf | wc -l
+$((2#$BINARY))
