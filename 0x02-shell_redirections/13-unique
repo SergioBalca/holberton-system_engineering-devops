@@ -1,2 +1,2 @@
 #!/bin/bash
-sort list_1 | sort list_2 | uniq -u	 
+sort -u words	 
