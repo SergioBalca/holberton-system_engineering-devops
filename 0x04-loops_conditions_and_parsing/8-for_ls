@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# script displaying Best School 10 times using while loop
+list="$(ls)"
+for entry in $list
+do
+	echo "$entry"
+done
