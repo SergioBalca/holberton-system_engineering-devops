@@ -1,7 +1,7 @@
 #!/usr/bin/env bash  
 #script that checks if a file exists, is a regular file and if is empty
 File=school
-if test -e "$File"
+if [[ -e "$File" ]]
 then
 	echo "$File file exists"
 	if [[ -s "$File" ]]
