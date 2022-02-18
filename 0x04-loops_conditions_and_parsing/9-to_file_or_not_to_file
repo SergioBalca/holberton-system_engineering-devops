@@ -1,6 +1,6 @@
 #!/usr/bin/env bash  
 #script that checks if a file exists, is a regular file and if is empty
-File="./school"
+File=school
 if [[ -e "$File" ]]
 then
 	echo "$File file exists"
