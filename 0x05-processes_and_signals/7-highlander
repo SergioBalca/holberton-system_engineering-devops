@@ -2,7 +2,7 @@
 #this script displays To infinity and beyond indefinitely, and I'm invincible!!! when receiving a SIGTERM signal
 while true
 do
-	if [[ $SIGTERM ]]
+	if [[ SIGTERM ]]
 	then
 		echo "I am invincible!!!"
 	fi
