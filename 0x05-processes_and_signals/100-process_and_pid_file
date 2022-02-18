@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 #this script kills 7-highlander process
-touch /var/run/myscript.pid
 echo "$$" > /var/run/myscript.pid
 while true
 do
