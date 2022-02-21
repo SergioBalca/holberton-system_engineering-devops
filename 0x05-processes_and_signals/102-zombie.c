@@ -9,16 +9,29 @@
  * Return: Always EXIT_SUCCESS.
  */
 
+int infinite_while(void);
+
 int main(void)
 {
-	i = 0;
+	int i = 0;
+	pid_t child_pid;
 
 	while (i < 5)
 	{
-		pid_t child_pid = fork();
+		child_pid = fork();
+		if (child_pid > 0)
+		{
+			printf("Zombie process created, PID: %d\n", child_pid);
+		}
+		else
+		{
+			exit(0);
+		}
+		i++;
 	}
 
-	infinite_while;
+	infinite_while();
+	return (0);
 }
 
 
