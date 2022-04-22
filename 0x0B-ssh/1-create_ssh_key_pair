@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# script that creates an RSA key pair
+# -b to define the number of bits of key
+#-f to define the file where private key is saved
+#-t to define the type of key generated
+#-N to use passphrase
+
+ssh-keygen -b 4096 -f school -t rsa -N betty
