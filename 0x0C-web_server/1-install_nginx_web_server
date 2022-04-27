@@ -1,18 +1,8 @@
 #!/usr/bin/env bash
 # script that installs nginx on the web-01 server
 
-sudo apt-get update -y
-sudo apt-get upgrade -y
-
-sudo apt-get install nginx -y
-unlink /etc/nginx/sites-enabled/default
-
-echo "server {
-	listen 80 default_server;
-	index index.html;
-	root /var/www/html;
-}" > /etc/nginx/conf.d/conf1
-
+sudo apt-get update
+sudo apt-get -y install nginx
+echo "Hello World" > /var/www/html/index.nginx-debian.html
+# Check if nginx services are active
 sudo service nginx start
-
-echo "Hello World!" > /var/www/html/index.nginx-debian.html
