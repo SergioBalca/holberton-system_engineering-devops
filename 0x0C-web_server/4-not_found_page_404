@@ -9,7 +9,7 @@ sudo -i "/server_name _;/ rewrite ^/redirect_me https://www.youtube.com/watch?v=
 
 # custumize 404 error page
 echo "Ceci n'est pas une page" > /var/www/html/404.html
-sudo -i "/server_name _;/ a rewrite ^/error_page 404/404.html;" /etc/nginx/sites-available/default
+sudo -i "/server_name _;/ a error_page 404/404.html;" /etc/nginx/sites-available/default
 
 # Restart nginx to save the changes
 sudo service nginx restart
