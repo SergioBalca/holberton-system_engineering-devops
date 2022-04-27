@@ -7,6 +7,6 @@ echo "Hello World" > /var/www/html/index.nginx-debian.html
 # Check if nginx services are active
 sudo service nginx start
 
-sudo -i "server_name _;/ rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default
+sudo -i "server_name _;/ a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default
 # Restart nginx to save the changes
 sudo service nginx restart
