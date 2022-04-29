@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # put nginx to listen in port 8080
-
 sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default
 service nginx stop
 chmod a+rwx /etc/nginx/nginx.conf
