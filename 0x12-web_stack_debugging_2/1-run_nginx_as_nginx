@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Script that configures a container to run nginx as nginx user
+# nginx must be listening on all active IPs on port 8080
+
+sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default
+service nginx stop
+chmod a+rwx /etc/nginx/nginx.conf
+sudo -u nginx service nginx start
