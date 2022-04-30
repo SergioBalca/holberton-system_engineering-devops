@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Script that will display information about subdomains
+
+get_info()
+{
+	var=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | cut -d ":" -f 2)
+	
+	echo $var | awk '{print "The subdomain '$2' is a " $4 " record and points to "$5"}'
+}
+
+if [ "$#" == 1 ];
+then
+	get_info "$1" "www"
+	get_info "$1" "lb-01"
+	get_info "$1" "web-01"
+	get_info "$1" "web-02"
+else
+	if [ "$#" == 2 ]
+	then
+		get_info "$1" "$2"
+	fi
+fi
