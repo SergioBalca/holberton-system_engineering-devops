@@ -20,12 +20,8 @@ if __name__ == '__main__':
             NUMBER_OF_DONE_TASKS += 1
         TOTAL_NUMBER_OF_TASKS = len(todos)
 
-    print("Employee {} is done with tasks({}/{})"
-          .format(EMPLOYEE_NAME, NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS))
-
-    """ todos response is a list of dictionaries
-        get method only can be use in dictionaries
-    """
+    print("Employee {} is done with tasks({}/{}):".format(
+        EMPLOYEE_NAME, NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS))
     for title in todos:
         TASK_TITLE = title.get('title')
         if title.get('completed') is True:
