@@ -3,8 +3,6 @@
 information about his/her TODO list progress. """
 
 from csv import QUOTE_ALL, writer
-from encodings import utf_8
-from tkinter import W
 from requests import get
 from sys import argv
 
