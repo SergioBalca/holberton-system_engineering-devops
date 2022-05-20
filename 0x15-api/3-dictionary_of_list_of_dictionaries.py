@@ -16,7 +16,7 @@ if __name__ == '__main__':
     json_file = 'todo_all_employees.json'
     with open(json_file, 'w', encoding='utf8') as f:
         for item in users:
-            USER_ID = item.get('id')
+            USER_ID = {'userID': item['id']}
             USERNAME = item.get('username')
             for element in todos:
                 TASK_TITLE = element.get('title')
