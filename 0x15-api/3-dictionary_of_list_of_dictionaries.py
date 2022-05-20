@@ -28,4 +28,4 @@ if __name__ == '__main__':
                 }
                 dict_list.append(user_tasks)
                 dict[USER_ID] = dict_list
-                json.dump(dict, f)
+        json.dump(dict, f)
