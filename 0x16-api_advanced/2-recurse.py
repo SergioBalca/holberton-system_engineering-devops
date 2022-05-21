@@ -16,7 +16,7 @@ def recurse(subreddit, hot_list=[], after=''):
         the function should return None
     """
 
-    url = 'https://www.reddit.com/r/'{}'/hot.json?after={}'
+    url = 'https://www.reddit.com/r/{}/hot.json?after={}'
     .format(subreddit, after)
     data_json = get(url, headers={'user-agent': 'SergioBalca'},
                     allow_redirects=False).json()
