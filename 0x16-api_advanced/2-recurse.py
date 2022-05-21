@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Module with top_ten recurse function"""
 
-import sys
 from requests import get
 from sys import argv
 
