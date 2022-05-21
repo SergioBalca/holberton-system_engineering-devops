@@ -2,7 +2,6 @@
 """Module with top_ten recurse function"""
 
 from requests import get
-from sys import argv
 
 
 def recurse(subreddit, hot_list=[], after=''):
