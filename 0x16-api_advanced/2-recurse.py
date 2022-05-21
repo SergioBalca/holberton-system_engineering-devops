@@ -10,23 +10,20 @@ def recurse(subreddit, hot_list=[], after=''):
         If no results are found for the given subreddit,
         the function should return None
     """
-    url = 'https://www.reddit.com/r/{}/hot.json?after={}'
+
+    url = 'https://www.reddit.com/r/'{}'/hot.json?after={}'
     .format(subreddit, after)
-    data_json = get(url,
-                    headers={'user-agent': 'SergioBalca'},
+    data_json = get(url, headers={'user-agent': 'SergioBalca'},
                     allow_redirects=False).json()
 
-    if 'error' in data_json and data_json['error'] == '404':
+    if 'error' in json or json['data']['children'] == []:
         return None
-    """To avoid key error in case a no valid subreddit is passed"""
-    if 'data' in data_json:
-        for dict in data_json['data']['children']:
-            """Saving first page in the list"""
-            hot_list.append(dict.get('data').get('title'))
-        after = data_json.get('data').get('after')
-    """After is None in the last page"""
+
+    for item in data_json['data']['children']:
+        """Saving first page of posts"""
+        hot_list.append(data_json['data']['title'])
+    after = data_json['data']['after']
     if after is None:
         return hot_list
     else:
-        """To go to next page"""
         return recurse(subreddit, hot_list, after)
