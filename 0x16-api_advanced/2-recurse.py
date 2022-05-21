@@ -6,7 +6,7 @@
 """
 
 
-from requests import get
+from requests
 
 
 def recurse(subreddit, hot_list=[], after=None):
@@ -18,16 +18,16 @@ def recurse(subreddit, hot_list=[], after=None):
 
     url = 'https://www.reddit.com/r/{}/hot.json?after={}'
     .format(subreddit, after)
-    data_json = get(url, headers={'user-agent': 'SergioBalca'},
-                    allow_redirects=False).json()
+    data_json = requests.get(url, headers={'user-agent': 'SergioBalca'},
+                             allow_redirects=False).json()
 
     if 'error' in data_json or data_json['data']['children'] == []:
         return None
 
     for item in data_json['data']['children']:
         """Saving first page of posts"""
-        hot_list.append(data_json['data']['title'])
-    after = data_json['data']['after']
+        hot_list.append(data_json.get('data').get('title'))
+    after = data_json.get('data').get('after')
     if after is None:
         return hot_list
     else:
