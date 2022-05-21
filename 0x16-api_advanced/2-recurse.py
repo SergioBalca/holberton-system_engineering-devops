@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """ queries the Reddit API and returns a list containing the titles
-        of all hot articles for a given subreddit.
-        If no results are found for the given subreddit,
-        the function should return None
+    of all hot articles for a given subreddit.
+    If no results are found for the given subreddit,
+    the function should return None
 """
 
 
@@ -21,7 +21,7 @@ def recurse(subreddit, hot_list=[], after=''):
     data_json = get(url, headers={'user-agent': 'SergioBalca'},
                     allow_redirects=False).json()
 
-    if 'error' in json or json['data']['children'] == []:
+    if 'error' in data_json or data_json['data']['children'] == []:
         return None
 
     for item in data_json['data']['children']:
